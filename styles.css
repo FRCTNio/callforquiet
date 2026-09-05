@@ -125,8 +125,8 @@ h2 { font-size:clamp(2.7rem,5vw,5rem); line-height:.98; }
 }
 .site-logo {
   display: block;
-  width: 215px;
-  max-height: 76px;
+  width: 450px;
+  max-height: 100px;
   height: auto;
   object-fit: contain;
 }
