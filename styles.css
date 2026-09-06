@@ -129,6 +129,7 @@ h2 { font-size:clamp(2.7rem,5vw,5rem); line-height:.98; }
   max-height: 100px;
   height: auto;
   object-fit: contain;
+  object-position: left center;
 }
 .nav-cta,
 .button {
