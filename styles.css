@@ -225,7 +225,7 @@ h2 { font-size:clamp(2.7rem,5vw,5rem); line-height:.98; }
   display: flex;
   flex-direction: column;
   gap: 7px;
-  font: 700 clamp(2rem, 3vw, 3.1rem)/1.02 Manrope, sans-serif;
+  font: 700 clamp(1.7rem, 2.5vw, 2.6rem)/1.02 Manrope, sans-serif;
   letter-spacing: .055em;
   text-transform: uppercase;
   text-shadow: 0 2px 18px rgba(0,0,0,.22);
