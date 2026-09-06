@@ -168,7 +168,7 @@ h2 { font-size:clamp(2.7rem,5vw,5rem); line-height:.98; }
   background-image:
     linear-gradient(90deg, rgba(7,24,39,.84) 0%, rgba(7,24,39,.63) 43%, rgba(7,24,39,.20) 72%, rgba(7,24,39,.08) 100%),
     linear-gradient(180deg, rgba(7,24,39,.06) 0%, rgba(7,24,39,.24) 100%),
-    url("https://images.unsplash.com/photo-1543039717-b4d407223b4c?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=80&w=2400");
+    url("images/quiet-hero.jpg");
   background-size: cover;
   background-position: center 45%;
 }
