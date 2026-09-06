@@ -53,7 +53,15 @@ h2 { font-size:clamp(2.7rem,5vw,5rem); line-height:.98; }
 .section-heading { margin-bottom:52px; }
 .section-heading h2 { max-width:900px; }
 .quote-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
-.problem-card { min-height:220px; padding:28px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); display:flex; flex-direction:column; justify-content:space-between; transition:.25s ease; }
+
+.problem-card {
+  min-height: 220px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* was space-between */
+  gap: 22px; /* add this so the number and quote don't collide now that space-between isn't doing that job */
+transition:.25s east;}
 .problem-card:hover { background:var(--cream); transform:translateY(-3px); }
 .problem-card span { color:var(--gold); font-weight:700; font-size:.8rem; }
 .problem-card p { font:600 1.15rem/1.35 Manrope,sans-serif; }
