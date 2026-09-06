@@ -32,7 +32,7 @@ a { color: inherit; }
   linear-gradient(180deg, rgba(10,26,42,.14), rgba(10,26,42,.88)),
   linear-gradient(135deg, transparent 0 45%, rgba(189,152,83,.12) 45% 46%, transparent 46% 100%); }
 .hero-bg::after, .contact-bg::after { content:""; position:absolute; left:-8%; right:-8%; bottom:-2%; height:35%; background:linear-gradient(155deg, transparent 0 37%, rgba(255,255,255,.06) 37.5% 45%, transparent 45.5% 54%, rgba(189,152,83,.10) 54.5% 63%, transparent 63.5%); opacity:.65; }
-.hero-inner { position:relative; z-index:2; padding:120px 0 130px; }
+.hero-inner { position:relative; z-index:2; padding:100px 0 130px; }
 .eyebrow { text-transform:uppercase; letter-spacing:.19em; color:var(--gold); font-size:.76rem; font-weight:700; }
 .eyebrow.navy { color:var(--navy); opacity:.7; }
 .hero h1, h2 { font-family: Manrope, Inter, sans-serif; letter-spacing:-.045em; margin:0; }
