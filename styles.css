@@ -192,7 +192,7 @@ h2 { font-size:clamp(2.7rem,5vw,5rem); line-height:.98; }
   grid-template-columns: minmax(0, 1fr) 340px;
   gap: 70px;
   align-items: end;
-  padding: 120px 0 94px;
+  padding: 100px 0 94px;
 }
 .hero-message { max-width: 770px; }
 .hero-photo h1 {
