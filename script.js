@@ -1,75 +1,131 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('#site-nav');
+document.addEventListener('DOMContentLoaded', () => {
 
-if (menuToggle && nav) {
-  menuToggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', String(open));
-  });
+  /* -------------------------------------------------
+     Footer year
+  ------------------------------------------------- */
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+  /* -------------------------------------------------
+     Mobile nav toggle
+  ------------------------------------------------- */
+  const header = document.getElementById('site-header');
+  const navToggle = document.getElementById('nav-toggle');
+  if (navToggle && header) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
     });
-  });
-}
+    document.querySelectorAll('.site-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        header.classList.remove('nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 
-const year = document.querySelector('#year');
-if (year) year.textContent = new Date().getFullYear();
-
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if (!reduceMotion) {
-  const reveals = document.querySelectorAll('.reveal');
-
-  const observer = new IntersectionObserver(
-    entries => {
+  /* -------------------------------------------------
+     Concerns: fade/slide in on scroll
+  ------------------------------------------------- */
+  const concernEls = document.querySelectorAll('.concern');
+  if ('IntersectionObserver' in window && concernEls.length) {
+    concernEls.forEach(el => {
+      el.style.setProperty('--i', el.dataset.d || 0);
+    });
+    const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
+          io.unobserve(entry.target);
         }
       });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
-  );
+    }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+    concernEls.forEach(el => io.observe(el));
+  } else {
+    concernEls.forEach(el => el.classList.add('is-visible'));
+  }
 
-  reveals.forEach(el => observer.observe(el));
+  /* -------------------------------------------------
+     Services: build cards, wire priority radios,
+     keep the live summary + hidden form field in sync
+  ------------------------------------------------- */
+  const SERVICES = [
+    { id: 'growth-strategy', name: 'Growth & Strategy', desc: 'Where to grow next, and how to know it\u2019s working.' },
+    { id: 'systems-ops',     name: 'Systems & Operations', desc: 'The day-to-day processes that keep things from slipping.' },
+    { id: 'finance-books',   name: 'Finance & Books Oversight', desc: 'A second set of eyes on the numbers, without hiring a CFO.' },
+    { id: 'team-hiring',     name: 'Team & Hiring', desc: 'Finding, onboarding, and keeping the right people.' },
+    { id: 'risk-compliance', name: 'Risk & Compliance', desc: 'Insurance, contracts, and the stuff that bites you later.' },
+    { id: 'tech-tools',      name: 'Technology & Tools', desc: 'The software stack, sorted and actually used.' },
+  ];
 
-  const heroImage = document.querySelector('.hero-image');
-  const glowA = document.querySelector('.page-glow-a');
-  const glowB = document.querySelector('.page-glow-b');
-  const driftWords = document.querySelectorAll('.drift-word');
-  let ticking = false;
+  const PRIORITIES = [
+    { value: 'now',  label: 'Right now' },
+    { value: 'soon', label: 'Down the road' },
+    { value: 'later',label: 'Not for now' },
+  ];
 
-  const updateMotion = () => {
-    const y = window.scrollY;
+  const grid = document.getElementById('services-grid');
 
-    if (heroImage && y < window.innerHeight * 1.2) {
-      heroImage.style.transform = `scale(1.035) translate3d(0, ${y * 0.055}px, 0)`;
-    }
+  if (grid) {
+    grid.innerHTML = SERVICES.map(svc => `
+      <div class="service-card">
+        <p class="service-name">${svc.name}</p>
+        <p class="service-desc">${svc.desc}</p>
+        <div class="priority-options" role="radiogroup" aria-label="Priority for ${svc.name}">
+          ${PRIORITIES.map((p, i) => `
+            <label>
+              <input type="radio" name="priority-${svc.id}" value="${p.value}">
+              ${p.label}
+            </label>
+          `).join('')}
+        </div>
+      </div>
+    `).join('');
+  }
 
-    if (glowA) glowA.style.transform = `translate3d(0, ${y * 0.035}px, 0)`;
-    if (glowB) glowB.style.transform = `translate3d(0, ${y * -0.018}px, 0)`;
+  const summaryEl = document.getElementById('priority-summary');
+  const priorityField = document.getElementById('priorities-field');
 
-    driftWords.forEach((word, i) => {
-      const rect = word.parentElement.getBoundingClientRect();
-      const offset = (window.innerHeight - rect.top) * (i ? 0.035 : -0.028);
-      word.style.transform = `translate3d(${offset}px, 0, 0)`;
+  function updateSummary() {
+    if (!summaryEl) return;
+
+    const grouped = { now: [], soon: [], later: [] };
+
+    SERVICES.forEach(svc => {
+      const checked = document.querySelector(`input[name="priority-${svc.id}"]:checked`);
+      if (checked && grouped[checked.value]) {
+        grouped[checked.value].push(svc.name);
+      }
     });
 
-    ticking = false;
-  };
+    Object.keys(grouped).forEach(tier => {
+      const group = summaryEl.querySelector(`.summary-group[data-tier="${tier}"]`);
+      if (!group) return;
+      const ul = group.querySelector('ul');
+      ul.innerHTML = grouped[tier].map(name => `<li>${name}</li>`).join('');
+      group.classList.toggle('has-items', grouped[tier].length > 0);
+    });
 
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(updateMotion);
-      ticking = true;
+    if (priorityField) {
+      const lines = Object.keys(grouped)
+        .filter(tier => grouped[tier].length)
+        .map(tier => {
+          const label = PRIORITIES.find(p => p.value === tier).label;
+          return `${label}: ${grouped[tier].join(', ')}`;
+        });
+      priorityField.value = lines.join(' | ');
     }
-  }, { passive: true });
+  }
 
-  updateMotion();
-} else {
-  document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
-}
+  if (grid) {
+    grid.addEventListener('change', (e) => {
+      if (e.target.matches('input[type="radio"]')) updateSummary();
+    });
+  }
+
+  const gsForm = document.getElementById('gs-form');
+  if (gsForm) {
+    gsForm.addEventListener('submit', () => updateSummary());
+  }
+
+});
