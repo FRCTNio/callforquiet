@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=2.123">
-        <script src="js/script.js?v=2.115"></script>
+    <link rel="stylesheet" href="css/style.css?v=2.1282">
+        <script src="js/script.js?v=2.12"></script>
 </head>
 <body>
 
@@ -28,9 +28,10 @@
 
             <div class="nav-menu">
                 <div class="nav-links">
-                    <a href="#areas">Areas</a>
-                    <a href="#scenarios">Scenarios</a>
-                    <a href="#method">Process</a>
+                    <a href="#where">Where</a>
+                    <a href="#who">Who</a>
+                    <a href="#when">When</a>
+                    <a href="#how">How</a>
                     <a href="#about">About</a>
                 </div>
                 <a href="#contact" class="nav-cta">Connect With <span class="logo-qonly">Q</span><span class="logo-qafter">uiet</span></a>
@@ -61,43 +62,166 @@
             </div>
         </header>
 
-     <!-- Scope Section Wrapper -->
-
-<section class="scenarios container" id="areas">
+<!-- Where We Work Section -->
+<section class="scenarios container" id="where">
     <div class="section-header">
-        <h2>Where we work.</h2>
+        <h2>Where we work for your business.</h2>
         <p>We bring clarity and structure to all areas of your business; including Technology, Communication, Marketing, and People.</p>
     </div>
 
-    <!-- Scope Cards Grid with data attributes -->
     <div class="scope-grid" style="margin-top: 0; margin-bottom: 0;">
-        <div class="scope-card" data-area="back-office">
+        <!-- Card 1 -->
+        <div class="scope-card" data-target="services-back-office">
             <span class="scope-tag">01 / BACK OFFICE</span>
             <h3>Systems & Workflow</h3>
             <p>Unclogging compromises, right-sizing software, organizing records, and reducing friction that slows your team down.</p>
+            
+            <div class="card-services-template" id="services-back-office">
+                <div class="drawer-header-mobile">
+                    <span class="drawer-title">Back Office & Systems Services</span>
+                    <button class="drawer-close" aria-label="Close">&times;</button>
+                </div>
+                <ul class="drawer-services-grid">
+                    <li>Software Analysis & App Consolidation</li>
+                    <li>Custom Spreadsheet Automation & Data Cleanup</li>
+                    <li>Standard Operating Procedure (SOP) Documentation</li>
+                    <li>Administrative Bottleneck & Hand-off Analysis</li>
+                    <li>Internal Communication Tool Structuring</li>
+                </ul>
+            </div>
         </div>
-        <div class="scope-card" data-area="register">
+
+        <!-- Card 2 -->
+        <div class="scope-card" data-target="services-register">
             <span class="scope-tag">02 / THE REGISTER</span>
             <h3>Point of Sale & Experience</h3>
             <p>Between the Back Office and the Front Door are the sales. We find transaction choke points, analyze pricing structure, and discover lost opportunities.</p>
+            
+            <div class="card-services-template" id="services-register">
+                <div class="drawer-header-mobile">
+                    <span class="drawer-title">Point of Sale & Margin Services</span>
+                    <button class="drawer-close" aria-label="Close">&times;</button>
+                </div>
+                <ul class="drawer-services-grid">
+                    <li>Transaction Flow & Checkout Experience Auditing</li>
+                    <li>Pricing Model & Margin Health Review</li>
+                    <li>Inventory Tracking and Ordering Analysis</li>
+                    <li>Cash Flow Friction Reduction</li>
+                    <li>Front-line Staff POS Workflow Coaching</li>
+                </ul>
+            </div>
         </div>
-        <div class="scope-card" data-area="sidewalk">
+
+        <!-- Card 3 -->
+        <div class="scope-card" data-target="services-sidewalk">
             <span class="scope-tag">03 / THE SIDEWALK & BEYOND</span>
             <h3>Customer Journey</h3>
             <p>Evaluating physical and digital touchpoints - from the outside looking in. The customer experience starts before you know who they are, and lasts long after the sale.</p>
+            
+            <div class="card-services-template" id="services-sidewalk">
+                <div class="drawer-header-mobile">
+                    <span class="drawer-title">Customer Journey & Touchpoint Services</span>
+                    <button class="drawer-close" aria-label="Close">&times;</button>
+                </div>
+                <ul class="drawer-services-grid">
+                    <li>Physical Storefront & Curb-appeal Evaluation</li>
+                    <li>Digital Intake & Website Friction Mapping</li>
+                    <li>Post-purchase Retention Evaluation</li>
+                    <li>Customer Feedback Loop Implementation</li>
+                    <li>Omnichannel Experience Consistency Check</li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <!-- Shared Accordion Detail Drawer -->
-    <div class="scope-drawer" id="scopeDrawer">
-        <div class="drawer-content" id="drawerContent">
-            <!-- Dynamic content injected via JS -->
-        </div>
+    <!-- Unique Drawer for 'Where' Section -->
+    <div class="scope-drawer" id="scopeDrawerWhere">
+        <div class="drawer-content" id="drawerContentWhere"></div>
     </div>
 </section>
 
+<!-- Who Should Hire Us Section -->
+<section class="scenarios container" id="who">
+    <div class="section-header">
+        <h2>Who should hire us.</h2>
+        <p>We are focused on supporting small/independent businesses of 1 to 100 people, and nonprofits of all sizes.</p>
+    </div>
+
+    <div class="scope-grid" style="margin-top: 0; margin-bottom: 0;">
+        <!-- Card A -->
+        <div class="scope-card" data-target="services-newbiz">
+            <span class="scope-tag">A / BRAND NEW BUSINESS</span>
+            <h3>More Than Just An Idea<br>Bring It To Life</h3>
+            <p>Have an idea for a business or just a new service line? We can help structure the plan, discover and avoid road blocks, and act as an extra set of hands and eyes to get it up and running.</p>
+            
+            <div class="card-services-template" id="services-newbiz">
+                <div class="drawer-header-mobile">
+                    <span class="drawer-title">Brand New Business Support</span>
+                    <button class="drawer-close" aria-label="Close">&times;</button>
+                </div>
+                <ul class="drawer-services-grid">
+                    <li>Business Model Structure & Validation</li>
+                    <li>Launch Roadmap & Timeline Development</li>
+                    <li>Initial Software & Tech Stack Setup</li>
+                    <li>Early Friction-Point Identification</li>
+                    <li>Execution Partner & Accountability Support</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card B -->
+        <div class="scope-card" data-target="services-established">
+            <span class="scope-tag">B / ALREADY ESTABLISHED</span>
+            <h3>Clear the Clutter<br>Step On The Gas</h3>
+            <p>Most businesses start with a great plan and great organization. Then they evolved how they run from capturing opportunities as they came. Let us help streamline how your business runs.</p>
+            
+            <div class="card-services-template" id="services-established">
+                <div class="drawer-header-mobile">
+                    <span class="drawer-title">Established Business Streamlining</span>
+                    <button class="drawer-close" aria-label="Close">&times;</button>
+                </div>
+                <ul class="drawer-services-grid">
+                    <li>Operations & Process Analysis</li>
+                    <li>Workflow Debloating & Complexity Reduction</li>
+                    <li>Team Hand-off and Communication Tuning</li>
+                    <li>Legacy Software Assessment & Migration Planning</li>
+                    <li>Day-to-day Routine Stabilization</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card C -->
+        <div class="scope-card" data-target="services-nonprofit">
+            <span class="scope-tag">C / NONPROFITS</span>
+            <h3>Nonprofits Are Unique<br>Maximize Your Mission</h3>
+            <p>Nonprofits walk an admirable tightrope between maximizing volunteer and donor value, while having to operate within rigid structures and regulations. We understand the dynamics between the board, staff, volunteers, and donors.</p>
+            
+            <div class="card-services-template" id="services-nonprofit">
+                <div class="drawer-header-mobile">
+                    <span class="drawer-title">Nonprofit Operational Governance</span>
+                    <button class="drawer-close" aria-label="Close">&times;</button>
+                </div>
+                <ul class="drawer-services-grid">
+                    <li>Board, Staff, and Volunteer Alignment Mapping</li>
+                    <li>Donor Journey & Touchpoint Streamlining</li>
+                    <li>Regulatory & Compliance Workflow Structure</li>
+                    <li>Resource Allocation & Operational Budgeting Support</li>
+                    <li>Mission-Driven Execution Tracking</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Unique Drawer for 'Who' Section -->
+    <div class="scope-drawer" id="scopeDrawerWho">
+        <div class="drawer-content" id="drawerContentWho"></div>
+    </div>
+</section>
+
+
+
         <!-- Scenarios -->
-        <section class="scenarios" id="scenarios">
+        <section class="scenarios" id="when">
             <div class="section-header">
                 <h2>When to bring in <span class="banner-brand"><span class="banner-q">Q</span>uiet.</h2>
                 <p>You don't need a massive management consultancy. You need a clear head to untangle specific bottlenecks.</p>
@@ -120,9 +244,9 @@
         </section>
 
         <!-- Method Section -->
-        <section class="method" id="method">
+        <section class="method" id="how">
             <div class="section-header">
-                <h2>No fluff. Just more traction.</h2>
+                <h2>No fluff. More function.</h2>
                 <p>A simple, time-tested approach to operational clarity.</p>
             </div>
 
@@ -155,15 +279,15 @@
         <section class="about" id="about">
             <div class="about-layout">
                 <div class="about-headline">
-                    <h2>Built by an independent business,<br> for independent businesses.</h2>
-                    <p><strong>Quiet</strong> offers operational advice and guidance, fractional operations, and options designed to fit what works for you and your business.</p>
+                    <h2>From an Independent business,<br> for independent businesses.</h2>
+                    <p><span class="logo-qabout">Q</span>uiet offers highly tailored operational advice and guidance, fractional operations, and options designed to fit what works for you and your business.</p>
                 </div>
                 <div class="about-body">
                     <p>
-                        Consultants will hand over a binder of abstract theories full of buzzwords and walk away. That's not what Quiet does. We treat your business with respect for its nuances, unique circumstances, and we address it's individual needs and exigencies.
+                        Consultants will hand over a binder of abstract theories full of buzzwords and walk away. That's not what <span class="logo-qabout">Q</span>uiet does. We treat your business with respect for its nuances, unique circumstances, and we address it's individual needs and exigencies.
                     </p>
                     <p>
-                        <strong>We want to be your Quiet partner, not your silent partner;</strong> supporting your vision and needs with tools, techniques, plans, and methods that work for you and your business.
+                        <strong>We want to be your <span class="logo-qabout2">Q</span>uiet partner, not your silent partner;</strong> supporting your vision and needs with tools, techniques, plans, and methods that work for you and your business.
                     </p>
                     <div class="stats-grid">
                         <div class="stat-box">

@@ -112,76 +112,51 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Where We Work - Card Accordion Drawer Logic
-    const cards = document.querySelectorAll(".scope-card");
-    const drawer = document.getElementById("scopeDrawer");
-    const drawerContent = document.getElementById("drawerContent");
+    // HTML-Driven Accordion & Mobile Slide-Up Drawer Logic for Multiple Sections
+    const sections = document.querySelectorAll('.scenarios');
 
-    const serviceData = {
-        "back-office": {
-            title: "Back Office & Systems Services",
-            services: [
-                "Software Evaluation & App Consolidation",
-                "Data Cleanup",
-                "Standard Operating Procedure (SOP) Documentation",
-                "Administrative Bottleneck & Hand-off Analysis",
-                "Internal Communication Tool Structuring"
-            ]
-        },
-        "register": {
-            title: "Point of Sale & Margin Services",
-            services: [
-                "Transaction flow & Checkout Speed Auditing",
-                "Pricing Model & Margin Health Review",
-                "Inventory Tracking Accuracy Checks",
-                "Cash Flow Friction Reduction",
-                "Front-line Staff POS Workflow Coaching"
-            ]
-        },
-        "sidewalk": {
-            title: "Customer Journey & Touchpoint Services",
-            services: [
-                "Physical Storefront & Curb-appeal Evaluation",
-                "Digital Intake & Website Friction Mapping",
-                "Post-purchase Retention Workflow Setup",
-                "Customer Feedback Loop Implementation",
-                "Omnichannel Experience Consistency Check"
-            ]
-        }
-    };
+    sections.forEach(section => {
+        const cards = section.querySelectorAll('.scope-card');
+        const drawer = section.querySelector('.scope-drawer');
+        const drawerContent = section.querySelector('.drawer-content');
 
-    let activeArea = null;
+        if (cards.length > 0 && drawer && drawerContent) {
+            let activeCard = null;
 
-    if (cards.length > 0 && drawer && drawerContent) {
-        cards.forEach(card => {
-            card.addEventListener("click", function() {
-                const areaKey = this.getAttribute("data-area");
+            cards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (e.target.closest('.scope-drawer')) return;
 
-                if (activeArea === areaKey) {
-                    drawer.classList.remove("open");
-                    cards.forEach(c => c.classList.remove("active"));
-                    activeArea = null;
-                    return;
-                }
+                    const targetId = this.getAttribute('data-target');
+                    const templateContent = document.getElementById(targetId);
 
-                cards.forEach(c => c.classList.remove("active"));
-                this.classList.add("active");
-                activeArea = areaKey;
+                    if (activeCard === this) {
+                        drawer.classList.remove('open');
+                        cards.forEach(c => c.classList.remove('active'));
+                        activeCard = null;
+                        return;
+                    }
 
-                const data = serviceData[areaKey];
-                if (data) {
-                    let listItems = data.services.map(s => `<li>${s}</li>`).join("");
+                    cards.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    activeCard = this;
 
-                    drawerContent.innerHTML = `
-                        <div class="drawer-title">${data.title}</div>
-                        <ul class="drawer-services-grid">
-                            ${listItems}
-                        </ul>
-                    `;
+                    if (templateContent) {
+                        drawerContent.innerHTML = templateContent.innerHTML;
+                        drawer.classList.add('open');
 
-                    drawer.classList.add("open");
-                }
+                        // Bind the mobile close button
+                        const closeBtn = drawerContent.querySelector('.drawer-close');
+                        if (closeBtn) {
+                            closeBtn.addEventListener('click', function() {
+                                drawer.classList.remove('open');
+                                cards.forEach(c => c.classList.remove('active'));
+                                activeCard = null;
+                            });
+                        }
+                    }
+                });
             });
-        });
-    }
+        }
+    });
 });
