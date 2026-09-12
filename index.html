@@ -1,213 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiet — Strategy & operations partner for independent businesses</title>
-<meta name="description" content="Quiet helps independent businesses tackle problems, plan growth, and cut busywork.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiet: Operational Guidance & Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=2.123">
+        <script src="js/script.js?v=2.115"></script>
 </head>
-<body id="top">
+<body>
 
-<header class="site-header" id="site-header">
-  <div class="header-inner">
-    <a class="logo" href="#top" aria-label="Quiet — back to top">
-      <span class="logo-q">Q</span><span class="logo-rest">uiet</span>
-    </a>
+<!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <span class="logo-text"><span class="logo-q">Q</span>uiet</span>
+            </a>
+            
+            <!-- Burger Toggle Button -->
+            <button class="nav-burger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-      <span></span><span></span><span></span>
-      <span class="sr-only">Menu</span>
-    </button>
-
-    <nav class="site-nav" id="site-nav">
-      <a href="#why-quiet">Why Quiet</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a class="nav-cta" href="#get-started">Get Started</a>
+            <div class="nav-menu">
+                <div class="nav-links">
+                    <a href="#areas">Areas</a>
+                    <a href="#scenarios">Scenarios</a>
+                    <a href="#method">Process</a>
+                    <a href="#about">About</a>
+                </div>
+                <a href="#contact" class="nav-cta">Connect With <span class="logo-qonly">Q</span><span class="logo-qafter">uiet</span></a>
+            </div>
+        </div>
     </nav>
-  </div>
-</header>
 
-<main>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-intro">
-      <p class="hero-line">Just Starting Up. <strong>Growing too Slow.</strong> <em>Growing too Fast.</em></p>
-      <p class="hero-line">Facing New Challenges. <em class="hero-soft">Employee turnover.</em></p>
-      <p class="hero-line"><strong>Too much on your plate.</strong> <span class="hero-soft">Need a partner.</span></p>
-    </div>
-
-    <div class="hero-pin">
-      <h1 class="pin-headline"><span class="q-accent">Q</span>uiet can help.</h1>
-      <div class="pin-rule" role="presentation"></div>
-    </div>
-
-    <div class="hero-spacer" aria-hidden="true"></div>
-  </section>
-
-  <!-- 01 / 02 / 03 -->
-  <section class="paths" id="why-quiet">
-    <div class="wrap">
-      <div class="paths-grid">
-
-        <article class="path">
-          <p class="path-num">01 <span class="path-name">Start Up</span></p>
-          <h3 class="path-head">Gear Up for What's New</h3>
-          <p class="path-body">Research and feedback for your target market and planned offerings.</p>
-          <ul class="path-list">
-            <li>Market and competitor research</li>
-            <li>Feedback on your planned offerings</li>
-            <li>Advice on priorities and staging</li>
-          </ul>
-        </article>
-
-        <article class="path">
-          <p class="path-num">02 <span class="path-name">Revitalize</span></p>
-          <h3 class="path-head">Break Out of the Status Quo</h3>
-          <p class="path-body">Ideas and advice for what's next for you and your business.</p>
-          <ul class="path-list">
-            <li>Vetting growth opportunities</li>
-            <li>Working through meeting challenges</li>
-            <li>Designing what success looks like</li>
-          </ul>
-        </article>
-
-        <article class="path">
-          <p class="path-num">03 <span class="path-name">Make Room</span></p>
-          <h3 class="path-head">Hand Off the Busy Work</h3>
-          <p class="path-body">Outsourced operations that give you more room to <em>think</em> and <em>act</em>.</p>
-          <ul class="path-list">
-            <li>Day-to-day operational coverage</li>
-            <li>Systems that run without you</li>
-            <li>Fewer fires, more forward motion</li>
-          </ul>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONCERNS -->
-  <section class="concerns">
-    <div class="wrap">
-      <p class="concern l-left sz-lg" data-d="0">Sometimes the challenge <span class="hot">has a name</span>&hellip;</p>
-      <p class="concern l-right sz-lg" data-d="1"><em>Sometimes</em> it's just&hellip; <span class="hot">a lot</span>.</p>
-      <p class="concern l-left" data-d="2"><em>I spend my whole day <span class="hot">putting out fires</span>.</em></p>
-      <p class="concern l-right-mid" data-d="3"><em>We're growing, but I'm not sure <span class="hot">what comes next</span>.</em></p>
-      <p class="concern l-left-mid" data-d="4"><em>How do we <span class="hot">find, and keep, good people</span>?</em></p>
-      <p class="concern l-right" data-d="5"><em class="hot-full">Everything depends on me.</em></p>
-      <p class="concern l-center" data-d="6"><em>We need something&hellip; I'm just <span class="hot">not sure what</span>.</em></p>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="wrap">
-      <div class="services-head">
-        <h2>What's on your plate right now?</h2>
-        <p>Flag where each of these sits for you today. It won't lock you into anything — it just gives us a starting point before we talk.</p>
-      </div>
-
-      <div class="services-body">
-        <div class="services-grid" id="services-grid">
-          <!-- cards injected by script.js -->
-        </div>
-
-        <aside class="priority-summary" id="priority-summary" aria-live="polite">
-          <h3>What you're telling us</h3>
-          <div class="summary-group" data-tier="now">
-            <h4>Right now</h4>
-            <ul></ul>
-            <p class="summary-empty">Nothing flagged yet</p>
-          </div>
-          <div class="summary-group" data-tier="soon">
-            <h4>Down the road</h4>
-            <ul></ul>
-            <p class="summary-empty">Nothing flagged yet</p>
-          </div>
-          <div class="summary-group" data-tier="later">
-            <h4>Not for now</h4>
-            <ul></ul>
-            <p class="summary-empty">Nothing flagged yet</p>
-          </div>
-          <p class="summary-note">This carries straight into the form below — no need to retype it.</p>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="wrap wrap-narrow">
-      <h2>About Quiet</h2>
-      <p>Quiet is a strategy and operations partner for independent businesses, trades, and mission-driven organizations across the South Shore, Cape Cod, and Greater Boston.</p>
-      <p>Most owners don't need another vendor. They need someone who can sit close to the business, understand how it actually runs, and help carry the parts that don't fit neatly into anyone's job description &mdash; the planning, the systems, the decisions that keep getting pushed to next week.</p>
-      <p>That's the role Quiet plays. Not a silent partner sitting on the sidelines. A quiet one, leaning in where it's useful and staying out of the way where it's not.</p>
-      <p class="about-sign">&mdash; David Hansen, Principal</p>
-    </div>
-  </section>
-
-  <!-- GET STARTED -->
-  <section class="get-started" id="get-started">
-    <div class="wrap">
-      <div class="gs-grid">
-
-        <div class="gs-info">
-          <h2>Let's talk about it.</h2>
-          <p>Tell us where things stand. No pitch, no pressure &mdash; just a conversation about what's actually going on.</p>
-          <dl class="gs-contact">
-            <div>
-              <dt>Email</dt>
-              <dd><a href="mailto:Connect@withquiet.com">Connect@withquiet.com</a></dd>
+    <!-- Hero Section -->
+    <main class="container">
+        <header class="hero">
+            <div class="hero-badge">
+                <span>//</span> OPERATIONAL GUIDANCE & SUPPORT
             </div>
-            <div>
-              <dt>Phone</dt>
-              <dd><a href="tel:+15084440400">(508) 444-0400</a></dd>
+            <h1>Run your business.<br>Don't let it run you.</h1>
+            <p class="hero-desc">
+              <ul class="hero-desc-list">
+                <li><b>From the back office, to the register, to the sidewalk, and beyond;</b> we figure out how you can run your business using less time, energy, and money.</li>
+                <li><b>We'll look at what's working great and what's hardly working;</b>then help find ways to make every day smoother for you and your business.</li>
+                <li><b>We're there for the hand-off too;</b> if you want, we can help keep your day-to-day operations calm and <i>quiet</i>.</li>
+            </ul>
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary" style="max-width: 220px;">
+                    Let’s Talk Shop 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="#method" class="btn-secondary">See How It Works</a>
             </div>
-          </dl>
-        </div>
+        </header>
 
-        <form class="gs-form" id="gs-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
-          <div class="field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="field field-half">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="field field-half">
-            <label for="company">Business name</label>
-            <input type="text" id="company" name="company">
-          </div>
-          <div class="field">
-            <label for="message">What's on your mind?</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-          </div>
+     <!-- Scope Section Wrapper -->
 
-          <input type="hidden" id="priorities-field" name="priorities">
-
-          <button type="submit" class="btn-submit">Send it over</button>
-        </form>
-
-      </div>
+<section class="scenarios container" id="areas">
+    <div class="section-header">
+        <h2>Where we work.</h2>
+        <p>We bring clarity and structure to all areas of your business; including Technology, Communication, Marketing, and People.</p>
     </div>
-  </section>
 
-</main>
+    <!-- Scope Cards Grid with data attributes -->
+    <div class="scope-grid" style="margin-top: 0; margin-bottom: 0;">
+        <div class="scope-card" data-area="back-office">
+            <span class="scope-tag">01 / BACK OFFICE</span>
+            <h3>Systems & Workflow</h3>
+            <p>Unclogging compromises, right-sizing software, organizing records, and reducing friction that slows your team down.</p>
+        </div>
+        <div class="scope-card" data-area="register">
+            <span class="scope-tag">02 / THE REGISTER</span>
+            <h3>Point of Sale & Experience</h3>
+            <p>Between the Back Office and the Front Door are the sales. We find transaction choke points, analyze pricing structure, and discover lost opportunities.</p>
+        </div>
+        <div class="scope-card" data-area="sidewalk">
+            <span class="scope-tag">03 / THE SIDEWALK & BEYOND</span>
+            <h3>Customer Journey</h3>
+            <p>Evaluating physical and digital touchpoints - from the outside looking in. The customer experience starts before you know who they are, and lasts long after the sale.</p>
+        </div>
+    </div>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>&copy; <span id="year"></span> Quiet LLC</span>
-    <span class="footer-place">Plymouth, Massachusetts</span>
-  </div>
-</footer>
+    <!-- Shared Accordion Detail Drawer -->
+    <div class="scope-drawer" id="scopeDrawer">
+        <div class="drawer-content" id="drawerContent">
+            <!-- Dynamic content injected via JS -->
+        </div>
+    </div>
+</section>
 
-<script src="script.js"></script>
+        <!-- Scenarios -->
+        <section class="scenarios" id="scenarios">
+            <div class="section-header">
+                <h2>When to bring in <span class="banner-brand"><span class="banner-q">Q</span>uiet.</h2>
+                <p>You don't need a massive management consultancy. You need a clear head to untangle specific bottlenecks.</p>
+            </div>
+
+            <div class="scenarios-grid">
+                <div class="scenario-card">
+                    <h4>The "We're growing, but it feels harder" phase</h4>
+                    <p>Revenue is up, but the challenges have grown too. Consistency requires time, planning, clarity, and - sometimes - a helping hand. Growing is great, unless it's growth out of control.</p>
+                </div>
+                <div class="scenario-card">
+                    <h4>That "Missing Margin" feeling</h4>
+                    <p>You suspect customers - and sales - are slipping through the cracks. Sometimes it's hard to pinpoint if it's your business, the customers, the market, or the season.</p>
+                </div>
+                <div class="scenario-card">
+                    <h4>The "Ideas Without Traction" triangle</h4>
+                    <p>Change is needed, but your too busy and you don't have the team you need for breathing room and the business can't take a day off, so changes aren't implimented.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Method Section -->
+        <section class="method" id="method">
+            <div class="section-header">
+                <h2>No fluff. Just more traction.</h2>
+                <p>A simple, time-tested approach to operational clarity.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div>
+                        <div class="step-num">01</div>
+                        <h4>The Audit</h4>
+                        <p>We not only crawl under the hood, we also hop in the passenger seat. We look at your software, hardware, store layout, website, workflows, and more.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div>
+                        <div class="step-num">02</div>
+                        <h4>The Playbook</h4>
+                        <p>You get a crystal-clear, prioritized breakdown of what we see, what we recommend, where to go from here, and what turns to take.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div>
+                        <div class="step-num">03</div>
+                        <h4>The Execution</h4>
+                        <p>Recommendations are useless if they collect dust. If you're too busy to impliment, we can help with that too.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="about-layout">
+                <div class="about-headline">
+                    <h2>Built by an independent business,<br> for independent businesses.</h2>
+                    <p><strong>Quiet</strong> offers operational advice and guidance, fractional operations, and options designed to fit what works for you and your business.</p>
+                </div>
+                <div class="about-body">
+                    <p>
+                        Consultants will hand over a binder of abstract theories full of buzzwords and walk away. That's not what Quiet does. We treat your business with respect for its nuances, unique circumstances, and we address it's individual needs and exigencies.
+                    </p>
+                    <p>
+                        <strong>We want to be your Quiet partner, not your silent partner;</strong> supporting your vision and needs with tools, techniques, plans, and methods that work for you and your business.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-num">360°</div>
+                            <div class="stat-label">Perspective from all angles</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">100%</div>
+                            <div class="stat-label">Committed to your success</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Playful Banner & Formspree Form (Centered/Expanded) -->
+        <div class="playful-banner" id="contact">
+          <div class="playful-content">
+    <h3>Ready to clear the noise with <span class="banner-brand"><span class="banner-q">Q</span>uiet?</span></h3>
+    <p>Stop guessing why things feel harder than they should.<br>Let’s get a clean set of eyes on your operation.<br><br><strong>Call or Text 508 - 444 - 0400</strong><br>or use the form to reach out now.</p>
+</div>
+
+            <!-- Formspree Integration Form -->
+            <form action="https://formspree.io/f/xaqvqaqw" method="POST" id="quietContactForm" class="contact-form">
+                
+                <!-- Row 1: Name, Phone, Email -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+                        <span class="error-message" id="phoneError">Numbers and phone characters only</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="jane@company.com">
+                        <span class="error-message" id="emailError">Please enter a valid email address</span>
+                    </div>
+                </div>
+
+                <!-- Row 2: Business Name, Address/Location, Contact Preference -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" name="business_name" placeholder="Quiet LLC">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address / Location</label>
+                        <input type="text" id="address" name="address_location" placeholder="City, State or Full Address">
+                    </div>
+                    <div class="form-group preference-group">
+                        <label>How Should Quiet Contact You?</label>
+                        <div class="checkbox-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="contact_method" value="Call"> Call
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="contact_method" value="Email"> Email
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: First thing to talk about -->
+                <div class="form-row-dual" style="grid-template-columns: 1fr;">
+                    <div class="form-group">
+                        <label for="message">What's the first thing we should talk about?</label>
+                        <textarea id="message" name="message" placeholder="Tell us about the bottleneck, workflow drag, or missing margins..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-submit-wrapper">
+                    <button type="submit" class="btn-primary">Get in Touch</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>© 2026 Quiet LLC. All rights reserved.</p>
+            <!-- <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="mailto:connect@withquiet.com">Contact</a>
+            </div>-->
+        </div>
+    </footer>
+
+
 </body>
 </html>
